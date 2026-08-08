@@ -868,21 +868,21 @@
                 id: 1, tag: "Company Event",
                 title: "Annual Safety Milestone Celebration",
                 desc: "THPAL marks another year of zero lost-time incidents across the production floor. Join the department-wide gathering at the main pavilion on August 14 to recognize the safety officers, shift leads, and operators who made this milestone possible. Light refreshments and commemorative pins will be distributed to all attendees. Department heads are asked to confirm headcounts by August 10.",
-                img: "../img/1785732556489.jpg",
+                img: "/img/1785732556489.jpg",
                 date: "August 3, 2026"
             },
             {
                 id: 2, tag: "Maintenance Notice",
                 title: "Scheduled Autoclave 2 Shutdown",
                 desc: "Autoclave 2 will undergo a planned 48-hour maintenance shutdown beginning August 9, 6:00 AM. Production will shift entirely to Autoclave 1 and 3 during this window. All shift supervisors should review the revised feed schedule posted on the operations board and coordinate handovers accordingly. Contact the Maintenance Planning Office for any concerns regarding the reduced-capacity period.",
-                img: "../img/1785732556394.jpg",
+                img: "img/1785732556394.jpg",
                 date: "August 1, 2026"
             },
             {
                 id: 3, tag: "Community Update",
                 title: "SDMP Scholarship Program Now Open",
                 desc: "Applications for the 2026-2027 Social Development and Management Program scholarship are now being accepted for qualified dependents of employees and residents of host and neighboring barangays in Claver. The program covers tuition, allowance, and book stipends for selected students. Interested applicants may pick up forms at the Community Relations Office or download them from the internal portal before the September 1 deadline.",
-                img: "../img/1785732556473.jpg",
+                img: "img/1785732556473.jpg",
                 date: "July 29, 2026"
             }
         ];
@@ -908,7 +908,7 @@
             const submitForm = () => {
                 if (!form.title.trim()) return;
                 if (modalMode === 'add') {
-                    onAdd({ ...form, id: Date.now(), tag: form.tag || 'Update', img: form.img || '../img/1785732556489.jpg', date: form.date || new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) });
+                    onAdd({ ...form, id: Date.now(), tag: form.tag || 'Update', img: form.img || 'img/1785732556489.jpg', date: form.date || new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) });
                 } else if (modalMode === 'edit' && activeBulletin) {
                     onEdit(activeBulletin.id, { ...form });
                 }
@@ -984,7 +984,7 @@
                             <input className="field-input" placeholder="Bulletin title" value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} />
 
                             <label className="field-label">Image URL</label>
-                            <input className="field-input" placeholder="../img/example.jpg" value={form.img} onChange={(e) => setForm({ ...form, img: e.target.value })} />
+                            <input className="field-input" placeholder="img/example.jpg" value={form.img} onChange={(e) => setForm({ ...form, img: e.target.value })} />
 
                             <label className="field-label">Description</label>
                             <textarea className="field-textarea" placeholder="Full details of the event or announcement..." value={form.desc} onChange={(e) => setForm({ ...form, desc: e.target.value })}></textarea>
